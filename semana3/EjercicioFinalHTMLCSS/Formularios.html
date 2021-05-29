@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Formulario.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <form  action="res.html" method="GET">
+        <div class="segmento">
+            <h1>Contáctanos</h1>
+        </div>
+        <label for="">
+            <input type="text" placeholder="Nombre" name="nombre" id="name">
+        </label>
+        <label for="">
+            <input type="text" placeholder="Correo" name="correo">
+        </label>
+        <textarea name="mensaje" id="" cols="30" rows="10"></textarea>
+        <button class="blue" type="submit"  id="eventeo">
+            Enviar
+        </button>
+        <button class="blue" type="submit"  id="enviar">
+            evento
+        </button>
+<div class="segmento">
+
+</div>
+    </form>
+        
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        document.write('Hola mundo JS');
+
+        $(document).ready(function(){ 
+        console.log('hola estoy en la consola');
+        
+        var nombre;
+        $('#enviar').click(function()
+        {
+            //traer valores de las variables
+            nombre=$('#name').val();   
+         alert('bienvenido a mi evento '+nombre +' li dio click');
+        });
+    });
+    </script>
+</body>
+</html>
