@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+ <!--
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   -->
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           ;
+         
+            var nombre;
+            let edad;
+/*
+            nombre=prompt('Dame tu nombre','');
+            edad=prompt('Dame tu edad','');
+            document.write(' Hola',nombre);
+           
+            document.write(' Edad',edad);
+
+       
+       var num1,num2,suma;
+       num1=parseInt(prompt('Dame un numero',''));
+       num2=parseInt(prompt('Dame otro un numero',''));
+       
+       
+       suma=num1+num2;
+       alert("el resultado de la suma es :"+ suma);
+         
+       var fecha=new Date();
+    
+       document.write("la fecha de hoy es "+ fecha)
+       
+       document.write('<br> hoy es el dia ',fecha.getDay());
+       document.write('<br> es la hora ',fecha.getHours());
+       
+       var calificacion=parseInt(prompt("ingresa tu calificacion"));
+       if(calificacion>=6){
+           document.write("  <br>felicidades aprobaste");
+       }else{
+           document.write("<br> No sentimos has reprobado<br><br> ");  
+       } 
+       */
+       var fecha1=new Date("June 12, 2021  13:50");
+       var day=fecha1.getDay();
+       var hora=fecha1.getHours();
+       var minutos=fecha1.getMinutes(); 
+       var horacom=hora+":"+minutos;
+ 
+
+   
+       if(day==6){
+        alert(" 1- hoy hay clase ");
+      // if(  (hora==9 ||hora==10||hora==11 ||hora==12||hora==13 ||hora==14 )){
+       
+        if( hora>=9 && hora<14  ){
+      
+        alert(" 2- estamos en horario de clase ");
+        
+       }
+
+       if( (hora>=11 && minutos>30) && hora<12  ){
+      
+      alert(" 3- estamos en reseso ");
+      
+     }
+
+       if( hora>=14) {
+        alert("4- ya cabo la clase");
+        
+       }
+
+    } 
+    else {
+        alert(" 5- hoy no estamos en clase ");
+    }
+         
+
+       
+    
+
+   </script>
+</body>
+</html>
