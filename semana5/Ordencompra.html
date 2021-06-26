@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .derecha{
+            text-align: right;
+        }
+    </style>
+     <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+        <div class="container">
+            <h1>Orden compra</h1> 
+            <table>
+                <thead>
+                    <tr id="nuevoArticulo">
+                        <th>Clave</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Unidades</th>
+                        <th>Importe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                       <td><input type="text" class="clave"></td>
+                       <td><input type="text" class="nombre"></td>
+                       <td><input type="text" class="descripcion"></td>
+                       <td><input type="text" class="precio"></td>
+                       <td><input type="text" class="unidades"></td>
+                       <td><input type="text" class="importe"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" class="clave"></td>
+                        <td><input type="text" class="nombre"></td>
+                        <td><input type="text" class="descripcion"></td>
+                        <td><input type="text" class="precio"></td>
+                        <td><input type="text" class="unidades"></td>
+                        <td><input type="text" class="importe"></td>
+                     </tr>
+                     <tr>
+                        <td><input type="text" class="clave"></td>
+                        <td><input type="text" class="nombre"></td>
+                        <td><input type="text" class="descripcion"></td>
+                        <td><input type="text" class="precio"></td>
+                        <td><input type="text" class="unidades"></td>
+                        <td><input type="text" class="importe"></td>
+                     </tr>
+                </tbody>
+                <tfoot>
+                    <tr id="filaSubtotal">
+                        <td class="derecha" colspan="4">Subtotal : $</td>
+                        
+
+                        <td class="derecha" id="subtotal">0.0</td>
+                    </tr>
+                    <tr id="filaIVA">
+                        <td class="derecha" colspan="4">IVA : $ </td>
+                        <td class="derecha" id="iva"> 0.0</td>
+                    </tr>
+                    <tr id="filaTotal">
+                        <td class="derecha" colspan="4">Total : $ </td>
+                        <td class="derecha" id="total"> 0.0</td>
+                    </tr>
+                    <tr>
+                        <td> <button id="comprar">comprar</button> </td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="ticket" ></div>
+        </div>
+</body>
+<script>
+   
+    var tr;
+    $('.precio , .unidades').change(function(){
+          
+        tr=$(this).closest('tr');
+        calcularImporte(tr);
+        calcularTotales();
+      
+      
+    });
+
+    $('#comprar').click(function(){
+      ///
+      var clave="";
+      var nombre="";
+      $(".clave").each( function () {
+        clave =(($(".clave").val()));
+       
+          });
+          $(".nombre").each( function () {
+            nombre =(($(".nombre").val()));
+       
+          });
+      ///
+    
+
+        //$('.ticket').text('hola esto es una prueba '+ subtotal1);
+        $('.ticket').text(' clave '+ clave +' nombre ' + nombre);
+      //  $('.ticket').text('Nombre '+ nombre);
+      });
+    function calcularImporte(tr){
+          var precio=Number($(tr).find('.precio').val()); 
+          var unidades=Number($(tr).find('.unidades').val());  
+
+
+          console.log('Precio: ',precio);
+          console.log('unidades: ',unidades);
+          var importe=precio*unidades;
+          console.log('importe: ',importe);
+          $(tr).find('.importe').val(importe.toFixed(2));
+    }
+
+      
+    function calcularTotales(){
+        var subtotal = 0; 
+        var iva=0;
+        var Total=0;
+
+        $(".importe").each( function () {
+            subtotal += Number($(this).val());
+          });
+          iva=subtotal*0.16;
+          Total=iva+subtotal;
+          console.log('Subtotal: ', subtotal );
+          console.log('iva: ', iva );
+          $('#subtotal').text(subtotal.toFixed(2));
+          $('#iva').text(iva.toFixed(2));
+          $('#total').text(Total.toFixed(2));
+         
+    }
+
+ 
+
+
+   
+
+  
+</script>
+</html>
