@@ -1,0 +1,29 @@
+<h1> Hola bienvenido a mi calcu</h1>
+<br>
+<form   method="post" action="/Calculadora" class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Primer  Numero</label>
+    <input type="number" class="form-control" name="num1" id="">
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Segundo  Numero</label>
+    <input type="number" class="form-control" name="num2" id="">
+  </div>
+
+  <div class="col-12">
+
+<select name="op" id="op"  class="form-select"  >
+    <option value="suma">suma</option>
+    <option value="resta">resta</option>
+    <option value="multiplicacion">multiplicacion</option>
+    <option value="division">division</option>  
+</select>
+
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form>
+
+
+<h2>El resultado es: {{resultado}}</h2>
